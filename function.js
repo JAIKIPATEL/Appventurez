@@ -34,4 +34,32 @@ function sayHi() {   // (1) create
   func(); // Hello     // (3) run the copy (it works)!
   sayHi(); // Hello    //     this still works too (why wouldn't it)
   
+  //A solution with a question mark operator '?':
+
+  function min(a, b) {
+    return a < b ? a : b;
+  }
+
+  // function pow
+  pow(3, 2)
+
+//function  support only natural values of n: integers up from 1.
+
+function pow(x, n) {
+    let result = x;
   
+    for (let i = 1; i < n; i++) {
+      result *= x;
+    }
+  
+    return result;
+  }
+  
+  let x = prompt("x?", '');
+  let n = prompt("n?", '');
+  
+  if (n < 1) {
+    alert(`Power ${n} is not supported, use a positive integer`);
+  } else {
+    alert( pow(x, n) );
+  }

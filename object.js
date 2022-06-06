@@ -30,11 +30,43 @@ console.log("--------------");
 
 // If salaries is empty, then the result must be 0.
 
+
+//To access the object, a method can use the this keyword.
+
+/*let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    // "this" is the "current object"
+    alert(this.name);
+  }
+
+};
+
+user.sayHi(); // John
+
+Here during the execution of user.sayHi(), the value of this will be user.
+
+Technically, it’s also possible to access the object without this, by referencing it via the outer variable:
+
+let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    alert(user.name); // "user" instead of "this"
+  }
+
+};
+*/
 let sum = 0;
 for (let key in salaries) {
     sum += salaries[key]    // 
 }
 console.log(sum) // 390
+//Replace Function Expressions with arrow functions
+
 function ask(question, yes, no) {
   if (confirm(question)) yes();
   else no();
@@ -58,4 +90,4 @@ function ask(question, yes, no) {
     () => alert("You agreed."),  // here arrow => represent return 
     () => alert("You canceled the execution.")
   );
-//   Looks short and c
+

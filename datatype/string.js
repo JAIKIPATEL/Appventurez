@@ -17,8 +17,7 @@ alert(guestList); // a list of guests, multiple lines
 */
 
 let guestList = "Guests:\n * John\n * Pete\n * Mary";
-
-alert(guestList); // a multiline list of guests
+console.log(); // a multiline list of guests
 //For example, these two lines are equal, just written differently:
 
 let str1 = "Hello\nWorld"; // two lines using a "newline symbol"
@@ -27,4 +26,17 @@ let str1 = "Hello\nWorld"; // two lines using a "newline symbol"
 let str2 = `Hello
 World`;
 
-alert(str1 == str2); // true
+console.log(str1 == str2); // true
+let str = `Hello`;
+
+// the first character
+console.log( str[0] ); // H
+console.log( str.charAt(0) ); // H
+
+// the last character
+console.log( str[str.length - 1] ); // o
+
+//Methods toLowerCase() and toUpperCase() change the case:
+
+console.log( 'Interface'.toUpperCase() ); // INTERFACE
+console.log( 'Interface'.toLowerCase() ); // interface

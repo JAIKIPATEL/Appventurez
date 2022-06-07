@@ -66,7 +66,7 @@ for (let key in salaries) {
 }
 console.log(sum) // 390
 //Replace Function Expressions with arrow functions
-
+//example
 function ask(question, yes, no) {
   if (confirm(question)) yes();
   else no();

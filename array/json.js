@@ -42,3 +42,5 @@ let user = {
   room.occupiedBy = meetup; // room references meetup
   
   JSON.stringify(meetup); // Error: Converting circular structure to JSON
+
+  

@@ -1,6 +1,4 @@
 
-
-
 // Rewrite it in the "class" syntax.
 
 class Clock {

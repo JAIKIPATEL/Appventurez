@@ -1,0 +1,41 @@
+﻿Date 16 Jun, 2022
+My Sql
+
+1 -     Select employees first name, last name, job_id and salary whose first name starts with alphabet S
+
+SELECT * FROM employees WHERE first_name LIKE 'S%';
+//select * from employees
+//where first_name="S%";
+
+2 -     Write a query to select employee with the highest salary
+
+ select * from employees
+ where salary=(select max(salary) from employees);
+
+3-      Select employee with the second highest salary
+
+SELECT salary  FROME employee sORDER BY salary DESC LIMIT N-1,1
+
+select salary from employees order by salary DESC LIMIT 1,1
+     
+4-      Fetch employees with 2nd or 3rd highest salary
+select salary from employees order by salary DESC LIMIT 2,1
+•       Write a query to select employees and their corresponding managers and their salaries
+•       Write a query to show count of employees under each manager in descending order
+5-     Find the count of employees in each department
+
+select count (column_name)
+from table_name
+where condition;
+•       Get the count of employees hired year wise
+6-      Find the salary range of employee – lik min, max avg sal of emp
+7-      Select the employees whose first_name contains "an"
+
+SELECT * FROM employees WHERE first_name LIKE '%an%';
+•       Write an SQL query to display employees who earn more than the average salary in that company
+•       Find the maximum salary from each department.
+•       Write a SQL query to display the 5 least earning employees
+8-       Find the employees hired in the 80s
+SELECT * FROM employees WHERE hire_date= LIKE ‘%1980%’;
+
+

@@ -20,6 +20,8 @@ select salary from employees order by salary DESC LIMIT 1,1
      
 4-      Fetch employees with 2nd or 3rd highest salary
 select salary from employees order by salary DESC LIMIT 2,1
+Select * from employees
+where salary = (select salary from employees order by salary DESC LIMIT 2,1)
 •       Write a query to select employees and their corresponding managers and their salaries
 •       Write a query to show count of employees under each manager in descending order
 5-     Find the count of employees in each department

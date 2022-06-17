@@ -14,18 +14,26 @@ SELECT * FROM employees WHERE first_name LIKE 'S%';
 
 3-      Select employee with the second highest salary
 
-SELECT salary  FROME employee sORDER BY salary DESC LIMIT N-1,1
+SELECT salary  FROME employees ORDER BY salary DESC LIMIT N-1,1
 
 select salary from employees order by salary DESC LIMIT 1,1
      
 4-      Fetch employees with 2nd or 3rd highest salary
+
 select salary from employees order by salary DESC LIMIT 2,1
 Select * from employees
 where salary = (select salary from employees order by salary DESC LIMIT 2,1)
-•       Write a query to select employees and their corresponding managers and their salaries
-•       Write a query to show count of employees under each manager in descending order
-5-     Find the count of employees in each department
 
+•       Write a query to select employees and their corresponding managers and their salaries
+select first_name,last_name,manager_id,salary from employees;
+
+SALARY FROM COMPANY WHERE
+SALARY IN (SELECT MIN(SALARY) FROM
+COMPANY GROUP BY DEPARTMENT_NAME);
+
+•       Write a query to show count of employees under each manager in descending order select count (employee)
+5-     Find the count of employees in each department
+select count (employee) DESC FROM employees GROUP BY department_id
 select count (column_name)
 from table_name
 where condition;
@@ -37,7 +45,19 @@ SELECT * FROM employees WHERE first_name LIKE '%an%';
 •       Write an SQL query to display employees who earn more than the average salary in that company
 •       Find the maximum salary from each department.
 •       Write a SQL query to display the 5 least earning employees
-8-       Find the employees hired in the 80s
-SELECT * FROM employees WHERE hire_date= LIKE ‘%1980%’;
 
+SELECT * FROM employees ORDER BY salary LIMIT 2,5
+8-       Find the employees hired in the 80s
+SELECT DISTINCT NAME FROM department 
+WHERE DateOfBirth between '1995-01-01' and '1996-12-31';
+
+
+SELECT DISTINCT FIRST_NAME,LAST_NAME FROM EMPLOYEES
+WHERE hire_date between '1980-01-01; and 1980-12-31';
+select * from employees 
+where hire_date > '1994-01-01' and hire_date < '1994-12-31';
+
+
+select * from employees 
+where hire_date between '1994-01-01' and '1994-12-31';
 

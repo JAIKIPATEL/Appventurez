@@ -1,63 +1,97 @@
-﻿Date 16 Jun, 2022
+﻿Date 20 Jun, 2022
 My Sql
 
 1 -     Select employees first name, last name, job_id and salary whose first name starts with alphabet S
-
+ 
 SELECT * FROM employees WHERE first_name LIKE 'S%';
-//select * from employees
-//where first_name="S%";
+ or select * from employees
+   where first_name="S%";
 
 2 -     Write a query to select employee with the highest salary
 
- select * from employees
- where salary=(select max(salary) from employees);
+      select * from employees
+     where salary=(select max(salary) from employees);
 
 3-      Select employee with the second highest salary
 
-SELECT salary  FROME employees ORDER BY salary DESC LIMIT N-1,1
+    SELECT salary  FROME employees ORDER BY salary DESC LIMIT N-1,1
 
-select salary from employees order by salary DESC LIMIT 1,1
+    select salary from employees order by salary DESC LIMIT 1,1
      
-4-      Fetch employees with 2nd or 3rd highest salary
+4-    Fetch employees with 2nd or 3rd highest salary
 
-select salary from employees order by salary DESC LIMIT 2,1
-Select * from employees
-where salary = (select salary from employees order by salary DESC LIMIT 2,1)
+   select salary from employees order by salary DESC LIMIT 2,1
+   Select * from employees
+    where salary = (select salary from employees order by salary DESC LIMIT 2,1)
 
-•       Write a query to select employees and their corresponding managers and their salaries
+5 -      Write a query to select employees and their corresponding managers and their salaries
 select first_name,last_name,manager_id,salary from employees;
 
-SALARY FROM COMPANY WHERE
-SALARY IN (SELECT MIN(SALARY) FROM
-COMPANY GROUP BY DEPARTMENT_NAME);
+   SALARY FROM COMPANY WHERE
+  SALARY IN (SELECT MIN(SALARY) FROM
+  COMPANY GROUP BY DEPARTMENT_NAME);
 
-•       Write a query to show count of employees under each manager in descending order select count (employee)
-5-     Find the count of employees in each department
-select count (employee) DESC FROM employees GROUP BY department_id
-select count (column_name)
-from table_name
-where condition;
+ 6 -     Write a query to show count of employees under each manager in descending order select count (employee)
+ 
+   SELECT  manager_id, COUNT(*) AS 'Employees' FROM `employees` 
+  GROUP BY manager_id
+  ORDER BY Employees DESC
+
+7-   Find the count of employees in each department
+
+  SELECT department_id, COUNT(*) total_employees
+  FROM `employees`
+  GROUP BY department_id;
+  select count (employee) DESC FROM employees GROUP BY department_id
+  
+  
+  select count (column_name)
+  from table_name
+  where condition;
 •       Get the count of employees hired year wise
-6-      Find the salary range of employee – lik min, max avg sal of emp
-7-      Select the employees whose first_name contains "an"
 
-SELECT * FROM employees WHERE first_name LIKE '%an%';
-•       Write an SQL query to display employees who earn more than the average salary in that company
-•       Find the maximum salary from each department.
-•       Write a SQL query to display the 5 least earning employees
+
+  SELECT extract(year from hire_date) Year, COUNT(*) total_employee FROM employees
+  GROUP BY extract(year from hire_date);
+
+
+8 -      Find the salary range of employee – lik min, max avg sal of emp
+
+ max
+ select max(salary) from employees;
+ min
+ select min(salary) from employees;
+ avg
+ select avg(salary) from employees;
+
+9-      Select the employees whose first_name contains "an"
+
+  SELECT * FROM employees WHERE first_name LIKE '%an%';
+10-       Write an SQL query to display employees who earn more than the average salary in that company
+
+
+ select employee_id,first_name,last_name,salary from employees
+ where salary > (select avg(salary) from employees);
+
+11-       Find the maximum salary from each department.
+  select department_id,max(salary) from employees
+  group by department_id;
+
+12-      Write a SQL query to display the 5 least earning employees
 
 SELECT * FROM employees ORDER BY salary LIMIT 2,5
-8-       Find the employees hired in the 80s
-SELECT DISTINCT NAME FROM department 
+13-      Find the employees hired in the 80s
+
 WHERE DateOfBirth between '1995-01-01' and '1996-12-31';
 
 
-SELECT DISTINCT FIRST_NAME,LAST_NAME FROM EMPLOYEES
-WHERE hire_date between '1980-01-01; and 1980-12-31';
-select * from employees 
-where hire_date > '1994-01-01' and hire_date < '1994-12-31';
+  SELECT DISTINCT FIRST_NAME,LAST_NAME FROM EMPLOYEES
+  WHERE hire_date between '1980-01-01; and 1980-12-31';
+  
+  select * from employees 
+   where hire_date > '1994-01-01' and hire_date < '1994-12-31';
 
-
-select * from employees 
-where hire_date between '1994-01-01' and '1994-12-31';
+or
+ select * from employees 
+  where hire_date between '1994-01-01' and '1994-12-31';
 

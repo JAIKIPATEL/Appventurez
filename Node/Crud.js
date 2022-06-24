@@ -14,7 +14,15 @@ const fs = require("fs");
 
 
 //fs.readFileSync("bio.txt","hello this is my bio." );
+// Append the data
 //fs.appendFileSync("bio.txt","this is append part of my bio");
-const data = fs.readFileSync("bio.txt","utf-8");
-console.log(data);
+// set file encoding to overcome buffer data 
+//const data = fs.readFileSync("bio.txt","utf-8");
+//console.log(data);
+//rename the file 
+//fs.renameSync("bio.txt","mybio.txt");
+//delete a file
+fs.unlinkSync("mybio.txt");
+// delete folder
+fs.rmdirSync("mybio");
 

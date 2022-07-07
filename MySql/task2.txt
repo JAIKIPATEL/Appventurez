@@ -1,0 +1,86 @@
+                My Sql Joins
+
+JOIN clauses are used to return the rows of two or more queries using two or more tables that shares a meaningful relationship based on a common set of values
+
+Types of MySQL Joins :
+
+    INNER JOIN
+    LEFT JOIN
+    RIGHT JOIN
+    STRAIGHT JOIN
+    CROSS JOIN
+    NATURAL JOIN
+    
+The INNER JOIN is such a JOIN in which all rows can be selected from both participating tables as long as there is a match between the columns. Usage of INNER JOIN combines the tables. An INNER JOIN allows rows from either table to appear in the result if and only if both tables meet the conditions specified in the ON clause.
+
+Created two table -Table_A with (A,M) and Table_B with (A,N) 
+create Query
+CREATE TABLE table_A (
+  A int DEFAULT NULL,
+  M varchar(5) DEFAULT NULL);
+  
+  CREATE TABLE table_B (
+  A int DEFAULT NULL,
+  N varchar(5) DEFAULT NULL);
+  
+  INSERT QUERY Table_A
+  insert into table_A
+ values (1,'m');
+ insert into table_A
+ values (2,'n');
+ insert into table_A
+ values (4,'o');
+ 
+ Inser query Table_B
+ insert into table_B
+ values (2,'p');
+ insert into table_B
+ values (3,'q');
+ insert into table_B
+ values (5,'r');
+  
+  INNER JOIN
+  The INNER JOIN is such a JOIN in which all rows can be selected from both participating tables as long as there is a match between the columns. Usage of INNER JOIN combines the tables. An INNER JOIN allows rows from either table to appear in the result if and only if both tables meet the conditions specified in the ON clause.
+  
+  SELECT * FROM table_A  
+INNER JOIN table_B
+ON table_A.A=table_B.A;
+LEFT JOINS-
+
+The LEFT JOIN is such a join which specifies that all records be fetched from the table on the left side of the join statement. If a record returned from the left table has no matching record in the table on the right side of the join, it is still returned, and the corresponding column from the right table returns a NULL value. 
+
+SELECT * FROM table_A  
+LEFT JOIN table_B
+ON table_A.A=table_B.A;
+
+MySQL RIGHT JOIN
+
+The RIGHT JOIN is such a join which specifies that all records be fetched from the table on the right side of the join statement, even if the table on the left has no matching record. In this case, the columns from the left table return NULL values.
+
+SELECT * FROM table_A  
+RIGHT JOIN table_B
+ON table_A.A=table_B.A;
+
+MySQL STRAIGHT JOIN
+
+An STRAIGHT_JOIN is such a join which scans and combines matching rows ( if specified any condition) which are stored in associated tables other wise it behaves like an INNER JOIN or JOIN of without any condition.
+
+SELECT * FROM table_A  
+STRAIGHT JOIN table_B;
+
+
+ MySQL CROSS JOIN
+
+A CROSS JOIN is such a join which specifies the complete cross product of two tables. For each record in the first table, all the records in the second table are joined, creating a potentially huge result set. This command has the same effect as leaving off the join condition, and its result set is also known as a Cartesian product.
+
+SELECT * FROM table_A  
+CROSS JOIN table_B;
+
+
+MySQL NATURAL JOIN
+
+A NATURAL JOIN is such a join that performs the same task as an INNER or LEFT JOIN, in which the ON or USING clause refers to all columns that the tables to be joined have in common
+
+SELECT * FROM table_A  
+NATURAL JOIN table_B;
+

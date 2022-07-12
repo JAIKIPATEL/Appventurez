@@ -1,0 +1,25 @@
+{
+    "user1" : {
+       "name" : "jaiki",
+       "password" : "password1",
+       "profession" : "student",
+       "address" : "varansi",
+       "id": 1
+    },
+    
+    "user2" : {
+       "name" : "akhand",
+       "password" : "password2",
+       "profession" : "student",
+       "address" : "lucknow",
+       "id": 2
+    },
+    
+    "user3" : {
+       "name" : "shubham",
+       "password" : "password3",
+       "profession" : "bodybuilder",
+       "address" : "jaunpur",
+       "id": 3
+    }
+ }

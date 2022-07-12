@@ -10,3 +10,6 @@ const index = (array, search) => {
     return false;
 }
 console.log(index(array, search));
+
+
+ 
